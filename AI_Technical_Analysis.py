@@ -1,5 +1,3 @@
-## Source: @DeepCharts Youtube Channel (https://www.youtube.com/@DeepCharts)
-
 import streamlit as st
 import yfinance as yf
 import pandas as pd
@@ -29,14 +27,14 @@ if "stock_data" in st.session_state:
     data = st.session_state["stock_data"]
 
     # Plot candlestick chart
-    fig = go.Figure(data=[
+    fig = go.Figure(data=[ 
         go.Candlestick(
             x=data.index,
             open=data['Open'],
             high=data['High'],
             low=data['Low'],
             close=data['Close'],
-            name="Candlestick"  # Replace "trace 0" with "Candlestick"
+            name="Candlestick"
         )
     ])
 
@@ -105,7 +103,4 @@ if "stock_data" in st.session_state:
 
             # Clean up temporary file
             os.remove(tmpfile_path)
-
-
-
             
